@@ -1,0 +1,17 @@
+//styles setup project
+@import "../sass/variables";
+@import "../sass/base";
+@import "../sass/mixins/default-styles/mixins";;
+
+//components structure
+@import "../sass/components/inputs/input-style.scss";
+@import "../sass/components/buttons/main-button.scss";
+@import "../sass/components/sidebar/sidebar-links.scss";
+@import "../sass/components/header/main-header.scss";
+@import "../sass/components/cards/card-messure.scss";
+@import "../sass/components/cards/card-profile.scss";
+@import "../sass/components/tables/table-set.scss";
+
+//pages structure
+@import "../sass/pages/login.scss";
+@import "../sass/pages/overview.scss";

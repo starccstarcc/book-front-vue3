@@ -1,0 +1,14 @@
+@mixin alignment-items($flex, $justify, $align) {
+	display: $flex;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin alternative-style($setHeight) {
+	border-radius: 8px;
+	border: 1px solid #c6c1c1;
+	height: $setHeight;
+	padding-left: 20px;
+	width: 100%;
+	overflow-y: hidden;
+}

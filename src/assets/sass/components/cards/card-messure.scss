@@ -1,0 +1,32 @@
+.card {
+	background-color: #fff;
+	width: 25%;
+	margin: 0 10px;
+	border-radius: 8px;
+	display: flex;
+	padding: 15px;
+
+	&__information {
+		flex: 1;
+		@include alignment-items(flex, center, flex-start);
+		flex-direction: column
+
+	}
+
+	&--type-font {
+		font-weight: bold;
+		margin-top: 6px;
+		font-size: 20px;
+	}
+
+	&__icon {
+		@include alignment-items(flex, center, center);
+		width: 60px;
+		height: 60px;
+		font-size: 25px;
+		color: #fff;
+		border-radius: 8px;
+		background-image: linear-gradient(to right, #009acc, #00b4f0);
+		box-shadow: -2px 2px 5px #00000068;
+	}
+}

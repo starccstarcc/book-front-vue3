@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  front-menager-devbooks:
+    build: .
+    entrypoint: sh ./.docker/entrypoint.sh
+    container_name: menager-app-devbook
+    volumes: 
+      - .:/usr/front-menager-devbooks/app
+    working_dir: /usr/front-menager-devbooks/app
+    ports:
+      - 8000:8000
+    restart: always
+    tty: true
+    environment: 
+      - CHOKIDAR_USEPOLLING=true
+    

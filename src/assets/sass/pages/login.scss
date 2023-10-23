@@ -1,0 +1,48 @@
+.main-banner {
+	background-image: url('/img/devbooks-banner.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+	@include alignment-items(flex, center, center);
+
+	main {
+		max-width: 1300px;
+		margin: 0 auto;;
+
+		.box-content {
+			width: 100%;
+			@include alignment-items(flex, center, center);
+      flex-direction: column;
+      height: 100%;
+
+			.form-container {
+        background-color: $white-color;
+				filter: drop-shadow(2px 5px 5px $default-shadow);
+        padding: 0 60px 60px;
+        border-radius: 20px;
+				@include alignment-items(flex, center, unset);
+        flex-direction: column;
+
+				.image-container {
+          text-align: center;
+          padding: 45px;
+
+          img {
+            width: 270px;
+            filter: drop-shadow(0 0 5px $white-color);
+          }
+        }
+
+				.title-content {
+          margin-bottom: 20px;
+
+          h1 {
+            margin: 0;
+            font-size: 40px;
+						font-weight: 500;
+          }
+        }
+			}
+		}
+	}
+}
