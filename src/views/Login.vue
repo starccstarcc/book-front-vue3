@@ -1,24 +1,23 @@
 <template>
-	<div class="main-banner">
+	<div class="container-login">
+		<StatusModal
+			:status_message="message"
+			:class="{ isModalActive: isActive, hasError: isError }"
+		/>
+		<header>
+			<img class="logo" :src="logo" alt="Logo bookhub">
+		</header>
 		<main>
-			<StatusModal
-				:status_message="message"
-				:class="{ isModalActive: isActive, hasError: isError }"
-			/>
-			<div class="box-content">
-				<div class="form-container">
-					<div class="image-container">
-						<img
-							src="/img/logo-livraria-do-dev-removebg.png"
-							alt="logo principal livraria do dev"
-						/>
-					</div>
-					<div class="title-content">
-						<h1>Gerenciador de plataforma</h1>
-						<p>Acesse seu ambiente de gestão da plataforma DevBooks</p>
-					</div>
-					<FormLogin @handleSubmit="submitLogin" />
+			<div class="size-content banner">
+				<div class="cta-banner">
+					<h1>Descubra um cantinho para chamar de seu Hub!</h1>
+					<p>O Bookhub é a melhor rede social para leitores do Brasil. O lugar perfeito para conhecer e compartilhar e opniar sobre um bom livro, fazer amizades e contribuir com o seu amor pela leitura.</p>
 				</div>
+			</div>
+			<div class="size-content">
+				<h3>Sistema de gestão de plataforma</h3>
+				<p>Acesse seu ambiente de gestão da plataforma Bookhub</p>
+				<FormLogin @handleSubmit="submitLogin" />
 			</div>
 		</main>
 	</div>
@@ -28,12 +27,14 @@
 import { defineComponent } from "vue";
 import FormLogin from "@/components/Forms/FormLogin.vue";
 import StatusModal from "@/components/Modals/StatusModal.vue";
+import logo from "/img/bookhub-logo.png";
 
 export default defineComponent({
 	name: "Login",
 	components: { FormLogin, StatusModal },
 	data() {
 		return {
+			logo,
 			message: "",
 			isActive: false,
 			isError: false,
@@ -57,4 +58,54 @@ export default defineComponent({
 });
 </script>
 
+<style lang="scss" scoped>
+.container-login {
+	background-color: #fff;
+	min-height: 100vh;
+
+	header {
+		padding: 10px 100px;
+		border-bottom: 1px solid transparent;
+		box-shadow: 0 0 10px #00000017;
+
+		.logo {
+			width: 130px;
+		}
+	}
+
+	main {
+		display: flex;
+		padding: 0 200px;
+		min-height: 80vh;
+
+		.size-content {
+			padding: 20px 10px 0;
+			width: 50%;
+			&.banner {
+				background-image: url("/img/banner.png");
+				background-repeat: no-repeat;
+				background-size: contain;
+				margin: 20px 10px 0;
+				position: relative;
+
+				.cta-banner {
+					position: absolute;
+					bottom: 30px;
+					left: 0%;
+
+					h1 {
+						line-height: 35px;
+						margin-bottom: 15px;
+					}
+				}
+			}
+
+			&:last-child {
+				border-left: 1px solid #c0c0c0;
+			}
+		}
+
+	}
+}
+</style>
 <!--https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html-->
