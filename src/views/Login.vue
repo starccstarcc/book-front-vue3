@@ -42,17 +42,18 @@ export default defineComponent({
 	},
 	methods: {
 		submitLogin(employee: object) {
-			this.$store
-				.dispatch("employeeStore/login", employee)
-				.catch((err: any) => {
-					let errorMessage = err.response.data.message;
+			console.log(employee)
+			// this.$store
+			// 	.dispatch("employeeStore/login", employee)
+			// 	.catch((err: any) => {
+			// 		let errorMessage = err.response.data.message;
 
-					this.isError = true;
-					this.message = errorMessage;
-					setTimeout(() => {
-						this.isError = false;
-					}, 2000);
-				});
+			// 		this.isError = true;
+			// 		this.message = errorMessage;
+			// 		setTimeout(() => {
+			// 			this.isError = false;
+			// 		}, 2000);
+			// 	});
 		},
 	},
 });
@@ -77,24 +78,27 @@ export default defineComponent({
 		display: flex;
 		padding: 0 200px;
 		min-height: 80vh;
+		margin-top: 40px;
 
 		.size-content {
-			padding: 20px 10px 0;
+			padding: 20px 20px 0;
 			width: 50%;
 			&.banner {
 				background-image: url("/img/banner.png");
 				background-repeat: no-repeat;
 				background-size: contain;
-				margin: 20px 10px 0;
+				margin: 20px 20px 0;
 				position: relative;
 
 				.cta-banner {
 					position: absolute;
-					bottom: 30px;
+					bottom: 0;
 					left: 0%;
 
 					h1 {
 						line-height: 35px;
+						font-size: 2rem;
+						font-weight: 600;
 						margin-bottom: 15px;
 					}
 				}
