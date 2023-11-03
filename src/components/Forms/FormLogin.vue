@@ -17,7 +17,9 @@
 				placeholder="**********"
 			/>
 		</div>
-		<MainButton type="submit" :title_btn="'Login'" class="btn-style-success" />
+		<MainButton type="submit">
+			Login
+		</MainButton>
 	</form>
 </template>
 
